@@ -1,0 +1,663 @@
+/* 主容器样式 */
+.tag-manager-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 8px;
+}
+
+/* 搜索框样式 */
+.tag-manager-search {
+    margin-bottom: 10px;
+}
+
+.tag-manager-search input {
+    width: 100%;
+    padding: 3px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* 主内容区域样式 */
+.tag-manager-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    position: relative;
+}
+
+/* 标签列表样式 */
+.tag-manager-tags {
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 分隔线和调整器 */
+.tag-manager-resizer {
+    width: 2px;
+    background-color: var(--background-modifier-border);
+    cursor: col-resize;
+    z-index: 10;
+}
+
+.tag-manager-resizer:hover {
+    background-color: var(--interactive-accent);
+}
+
+/* 文件列表样式 */
+.tag-manager-files {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 头部样式 */
+.tag-manager-header {
+    padding: 4px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+/* 修改文件头部按钮布局 */
+.file-header-buttons {
+    display: flex;
+    gap: 5px;
+    margin-right: 5px; /* 添加右侧间距，让新建按钮靠近排序按钮 */
+}
+
+/* 调整排序按钮位置，使其靠近新建按钮 */
+.file-sort-button {
+    margin-right: 4px; /* 减小左侧间距，让排序按钮靠近新建按钮 */
+}
+.file-new-button{
+    margin-left: 4px;
+}
+.tag-header-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.tag-manager-header button {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.tag-manager-header button:hover {
+    opacity: 0.9;
+}
+
+/* 标签项样式 */
+.tag-list, .file-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.tag-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 4px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--background-modifier-border-hover);
+    font-size: 14px;
+}
+
+.tag-item:hover {
+    background-color: var(--background-secondary-alt);
+}
+
+.tag-item.selected {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.tag-toggle {
+    margin-right: 2px;
+    cursor: pointer;
+    width: 12px;
+    text-align: center;
+    font-size: 12px;
+    color: #ee9830;
+}
+
+.tag-toggle.no-children {
+    visibility: hidden;
+}
+
+.tag-icon {
+    margin-right: 6px;
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 文件项样式 */
+.file-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 4px 4px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--background-modifier-border-hover);
+}
+
+.file-item:hover {
+    background-color: var(--background-secondary-alt);
+}
+
+/* 添加文件项选中样式 */
+.file-item.selected {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+/* 选中文件项中的路径文字颜色调整 */
+.file-item.selected .file-path {
+    color: var(--text-on-accent);
+    opacity: 0.8;
+}
+
+.file-icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.file-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.file-path {
+    font-size: 10px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+/* 空消息样式 */
+.empty-message {
+    padding: 16px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* 子标签容器 */
+.tag-children {
+    width: 100%;
+}
+
+/* 折叠标签样式 */
+.tag-item.collapsed + .tag-item {
+    border-top: none;
+}
+
+/* 彩虹大纲样式 */
+.tag-item.rainbow-outline {
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+
+.tag-item.rainbow-outline.level-0 {
+    border-left-color: #FF6B6B; /* 红色 */
+}
+
+.tag-item.rainbow-outline.level-1 {
+    border-left-color: #239949; /* 橙色 */
+}
+
+.tag-item.rainbow-outline.level-2 {
+    border-left-color: #FFDA77; /* 黄色 */
+}
+
+.tag-item.rainbow-outline.level-3 {
+    border-left-color: #A0E548; /* 绿色 */
+}
+
+.tag-item.rainbow-outline.level-4 {
+    border-left-color: #4FCAFF; /* 蓝色 */
+}
+
+.tag-item.rainbow-outline.level-5 {
+    border-left-color: #975BFF; /* 紫色 */
+}
+
+.tag-item.rainbow-outline.level-6 {
+    border-left-color: #FF77FF; /* 粉色 */
+}
+
+/* 添加子标签缩进样式 */
+.tag-item[data-level="1"] {
+    padding-left: 16px;
+}
+
+.tag-item[data-level="2"] {
+    padding-left: 28px;
+}
+
+.tag-item[data-level="3"] {
+    padding-left: 40px;
+}
+
+.tag-item[data-level="4"] {
+    padding-left: 52px;
+}
+
+.tag-item[data-level="5"] {
+    padding-left: 64px;
+}
+
+.tag-item[data-level="6"] {
+    padding-left: 76px;
+}
+
+/* 在适当位置添加 */
+.tag-toggle.hidden {
+    display: none;
+}
+
+/* 当三角形隐藏时，调整标签图标的位置 
+.tag-toggle.hidden + .tag-icon {
+    margin-left: 12px;
+}*/
+
+/* 无标签项样式 */
+.tag-item.untagged-item {
+    background-color: var(--background-secondary-alt);
+    border-bottom: 2px solid var(--background-modifier-border);
+    margin-bottom: 5px;
+}
+
+.tag-item.untagged-item:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.tag-item.untagged-item.selected {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+/* 仅父标签项样式 */
+.tag-item.parent-only-item {
+    font-style: italic;
+    border-bottom: 1px dashed var(--background-modifier-border);
+}
+
+.tag-item.parent-only-item .tag-name {
+    opacity: 0.9;
+}
+
+.tag-item.parent-only-item:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.tag-item.parent-only-item.selected {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    font-style: normal;
+}
+
+
+/* 标签编辑弹窗样式 */
+.tag-input-container {
+    margin-bottom: 10px;
+}
+
+.tag-suggestions {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+}
+
+.tag-suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.tag-suggestion-item:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.tag-suggestion-item.no-results {
+    color: var(--text-muted);
+    cursor: default;
+}
+
+.tag-suggestion-item.create-new {
+    color: var(--text-accent);
+    font-weight: 500;
+}
+
+.selected-tags-list {
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.selected-tag-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--background-modifier-hover);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 0 6px 6px 0;
+}
+
+.tag-name {
+    margin-right: 6px;
+}
+
+.tag-remove-button {
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: bold;
+    transition: color 0.1s ease;
+}
+
+.tag-remove-button:hover {
+    color: var(--text-error);
+}
+
+.no-tags-message {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.tag-edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 标签编辑弹窗样式 */
+.tag-edit-modal {
+    max-width: 500px; /* 设置最大宽度 */
+    width: 90vw; /* 响应式宽度，但不超过最大宽度 */
+}
+
+.tag-edit-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 标签按钮容器 */
+.tag-edit-modal .tag-buttons {
+    display: flex;
+    flex-wrap: wrap; /* 允许标签按钮换行 */
+    gap: 8px;
+    margin-top: 10px;
+    max-height: 200px; /* 设置最大高度 */
+    overflow-y: auto; /* 如果标签太多，允许滚动 */
+    padding: 5px;
+}
+
+/* 标签按钮样式 */
+.tag-edit-modal .tag-button {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.2s ease;
+    margin: 2px;
+    white-space: nowrap; /* 防止标签名内部换行 */
+}
+
+.tag-edit-modal .tag-button:hover {
+    background-color: var(--interactive-accent-hover);
+}
+
+.tag-edit-modal .tag-button.selected {
+    background-color: #e9a552;
+    border: 1px solid var(--interactive-accent);
+}
+
+/* 标签输入框容器 */
+.tag-edit-modal .tag-input-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tag-edit-modal .tag-input {
+    flex-grow: 1;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+}
+
+/* 添加按钮 */
+.tag-edit-modal .add-tag-button {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.tag-edit-modal .add-tag-button:hover {
+    background-color: var(--interactive-accent-hover);
+}
+
+/* 操作按钮容器 */
+.tag-edit-modal .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.selected-tags-list {
+    margin-bottom: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.selected-tag-item {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border-radius: 16px;
+    padding: 4px 12px;
+    margin: 0 6px 6px 0;
+    font-size: 12px;
+}
+
+.tag-name {
+    margin-right: 6px;
+}
+
+.tag-remove-button {
+    cursor: pointer;
+    color: var(--text-on-accent);
+    font-weight: bold;
+    transition: color 0.1s ease;
+}
+
+.tag-remove-button:hover {
+    color: var(--text-error-hover);
+}
+
+/* 批量操作栏样式 - 改为两行显示 */
+.batch-action-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--interactive-accent);
+    padding: 2px 2px;
+    border-radius: 4px;
+    margin-right: 2px;
+    min-width: 50px;
+    min-height: 30px;
+}
+
+.selected-count {
+    color: var(--text-on-accent);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+}
+
+.batch-actions-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+}
+
+.batch-edit-tags-button,
+.clear-selection-button {
+    background-color: transparent;
+    color: var(--text-on-accent);
+    border: 1px solid var(--text-on-accent);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.batch-edit-tags-button:hover,
+.clear-selection-button:hover {
+    background-color: rgb(235, 144, 40);
+}
+
+/* 文件多选样式 */
+.file-item.selected {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+.file-item.selected .file-path {
+    color: var(--text-on-accent);
+    opacity: 0.8;
+}
+
+/* 添加以下样式到文件末尾 */
+
+/* 编辑模式容器样式 */
+.edit-mode-container {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: var(--background-secondary);
+    border-radius: 5px;
+}
+
+.edit-mode-selection {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.mode-button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-button:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.mode-button.active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border-color: var(--interactive-accent);
+}
+
+.mode-description {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* 标签搜索容器样式 */
+.tag-search-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.tag-search-input {
+    flex-grow: 1;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+}
+
+.reset-search-button {
+    background-color: var(--background-modifier-border);
+    color: var(--text-normal);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reset-search-button:hover {
+    background-color: var(--background-modifier-hover);
+}
+
+.all-tags-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

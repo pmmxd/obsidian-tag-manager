@@ -1,0 +1,10 @@
+{
+    "id": "tag-manager",
+    "name": "标签管理器",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "一个用于管理 Obsidian 标签的插件，提供双列布局的标签和文件管理界面。",
+    "author": "pmmxd",
+    "authorUrl": "https://github.com/pmmxd",
+    "isDesktopOnly": false
+}
